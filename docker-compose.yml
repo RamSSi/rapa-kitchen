@@ -38,7 +38,7 @@ services:
     container_name: reactcontainer
     ports:
       - "3000:3000"
-   networks:
+    networks:
       front-back-bridge:
         ipv4_address: 172.24.0.3
     depends_on:
