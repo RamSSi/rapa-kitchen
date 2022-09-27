@@ -1,0 +1,54 @@
+version: '3.7'
+
+services:
+  database:
+    image: mydb:1.0
+    container_name: databasecontainer
+    environment:
+      MYSQL_ROOT_PASSWORD: test1234
+      MYSQL_DATABASE: rapa_kitchen
+    ports:
+      - "3306:3306"
+    volumes:
+      - mydb_data:/var/lib/mysql
+    networks:
+      back-db-bridge:
+        ipv4_address: 172.23.0.10
+
+  spring:
+    image: spring:2.0
+    container_name: spring
+    depends_on:
+      - database
+    networks:
+      back-db-bridge:
+        ipv4_address: 172.23.0.2
+      front-back-bridge:
+        ipv4_address: 172.24.0.2
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/rapa_kitchen
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: test1234
+  front:
+    image: react:21.0
+    container_name: reactcontainer
+    ports:
+      - "3000:3000"
+    networks:
+      front-back-bridge:
+        ipv4_address: 172.24.0.3
+    depends_on:
+      - spring
+networks:
+  back-db-bridge:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.23.0.0/28"
+  front-back-bridge:
+    ipam:
+      driver: default
+      config:
+       - subnet: "172.24.0.0/28"
+volumes:
+  mydb_data: 

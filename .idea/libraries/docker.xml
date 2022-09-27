@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="docker">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/test.jar!/" />
+      <root url="jar://$PROJECT_DIR$/rapakitchen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/rapakitchen-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
