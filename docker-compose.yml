@@ -2,7 +2,9 @@ version: '3.7'
 
 services:
   database:
-    image: mydb:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile_database
     container_name: databasecontainer
     environment:
       MYSQL_ROOT_PASSWORD: test1234
@@ -16,7 +18,8 @@ services:
         ipv4_address: 172.23.0.10
 
   spring:
-    image: spring:2.0
+    build:
+      context: .
     container_name: spring
     depends_on:
       - database
@@ -30,11 +33,12 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: test1234
   front:
-    image: react:21.0
+    build:
+      context: ./RAPA-menu-planner
     container_name: reactcontainer
     ports:
       - "3000:3000"
-    networks:
+   networks:
       front-back-bridge:
         ipv4_address: 172.24.0.3
     depends_on:
@@ -51,4 +55,4 @@ networks:
       config:
        - subnet: "172.24.0.0/28"
 volumes:
-  mydb_data: 
+  mydb_data:
