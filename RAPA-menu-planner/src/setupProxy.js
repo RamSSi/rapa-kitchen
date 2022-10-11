@@ -1,23 +1,23 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function (app) {
-	app.use(
-		'/menu',
-		createProxyMiddleware({
-			target: 'http://spring:8080',
-			changeOrigin: true,
-		})
-	);
-	 app.use(
-                '/comment',
+        app.use(
+                '/menu',
                 createProxyMiddleware({
-                        target: 'http://spring:8080',
+                        target: 'http://rapa-backend-service:8080',
                         changeOrigin: true,
                 })
         );
-	 app.use(
+         app.use(
+                '/comment',
+                createProxyMiddleware({
+                        target: 'http://rapa-backend-service:8080',
+                        changeOrigin: true,
+                })
+        );
+         app.use(
                 '/wishmenu',
                 createProxyMiddleware({
-                        target: 'http://spring:8080',
+                        target: 'http://rapa-backend-service:8080',
                         changeOrigin: true,
                 })
         );

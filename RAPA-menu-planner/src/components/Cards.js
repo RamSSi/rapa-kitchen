@@ -59,7 +59,7 @@ export default function Cards() {
 	
 	return (
 		<>
-			<div className="flex mx-28 mt-7">
+			<div className="flex mx-18 ml-10 mt-7">
 
 				<div
 					id="Mon"
@@ -74,6 +74,7 @@ export default function Cards() {
 						<p>{menu[0].menuFiv}</p>
 					</div>
 					<p className="text-[#BABFC8] text-sm">{menu[0].menuCal} Kcal</p>
+					<p className="text-[#c9c9c9] text-sm mt-5 mb-3">식수 인원 : 50</p>
 				</div>
  
 				<div
@@ -88,7 +89,8 @@ export default function Cards() {
 						<p>{menu[1].menuFou}</p>
 						<p>{menu[1].menuFiv}</p>
 					</div>
-					<p className="text-[#BABFC8] text-sm">{menu[1].menuCal} Kcal</p>
+					<p className="text-[#BABFC8] text-sm">{menu[0].menuCal} Kcal</p>
+					<p className="text-[#c9c9c9] text-sm mt-5 mb-3">식수 인원 : 50</p>
 				</div>
 
 				<div
@@ -103,7 +105,8 @@ export default function Cards() {
 						<p>{menu[2].menuFou}</p>
 						<p>{menu[2].menuFiv}</p>
 					</div>
-					<p className="text-[#BABFC8] text-sm">{menu[2].menuCal} Kcal</p>
+					<p className="text-[#BABFC8] text-sm">{menu[0].menuCal} Kcal</p>
+					<p className="text-[#c9c9c9] text-sm mt-5 mb-3">식수 인원 : 50</p>
 				</div>
 
 				<div
@@ -118,7 +121,8 @@ export default function Cards() {
 						<p>{menu[3].menuFou}</p>
 						<p>{menu[3].menuFiv}</p>
 					</div>
-					<p className="text-[#BABFC8] text-sm">{menu[3].menuCal} Kcal</p>
+					<p className="text-[#BABFC8] text-sm">{menu[0].menuCal} Kcal</p>
+					<p className="text-[#c9c9c9] text-sm mt-5 mb-3">식수 인원 : 50</p>
 				</div>
 
 				<div
@@ -133,7 +137,8 @@ export default function Cards() {
 						<p>{menu[4].menuFou}</p>
 						<p>{menu[4].menuFiv}</p>
 					</div>
-					<p className="text-[#BABFC8] text-sm">{menu[4].menuCal} Kcal</p>
+					<p className="text-[#BABFC8] text-sm">{menu[0].menuCal} Kcal</p>
+					<p className="text-[#c9c9c9] text-sm mt-5 mb-3">식수 인원 : 50</p>
 				</div>
 			</div>
 		</>

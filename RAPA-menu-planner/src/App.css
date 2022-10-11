@@ -1,3 +1,21 @@
 .App {
   text-align: center;
+  width: 100%;
 }
+
+.mid {
+  display: flex;
+  flex-direction:row ;
+  margin-bottom: 100px;
+}
+
+.mid-l {
+  margin-right: 50px;
+}
+
+.mid-r {
+  border-left: 1px solid #e1e1e1;
+  padding-top: 95px;
+  padding-left: 70px;
+}
+
